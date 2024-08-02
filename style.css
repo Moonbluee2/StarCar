@@ -1,0 +1,328 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    background-color: #f4f4f4;
+    color: #333;
+    margin: 0;
+    padding: 0;
+}
+
+/* Estilos del header */
+header {
+    background: #333;
+    color: #fff;
+    padding: 10px 0;
+    text-align: center;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header .logo {
+    font-size: 24px;
+    font-weight: bold;
+    margin-left: 20px;
+}
+
+header .logo.principal {
+    display: flex;
+    align-items: center;
+}
+
+header .logo-image {
+    height: 50px;
+    margin-right: 10px;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    margin-right: 20px;
+}
+
+nav ul li {
+    margin: 0 15px;
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+}
+
+/* Estilos del main */
+main {
+    padding: 20px;
+}
+
+/* Estilos del simulador */
+.simulador {
+    background: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    max-width: 600px;
+    margin: 20px auto;
+}
+
+.simulador h1 {
+    margin-bottom: 20px;
+}
+
+.simulador label {
+    display: block;
+    margin: 10px 0 5px;
+}
+
+.simulador input, .simulador select {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.simulador input:invalid {
+    border-color: #8f8a8a;
+}
+
+.simulador input:invalid:focus {
+    outline: none;
+    border-color: rgb(15, 14, 14);
+}
+
+.simulador input:valid {
+    border-color: green;
+}
+
+.simulador button {
+    width: 100%;
+    padding: 10px;
+    background: #333;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.simulador button:hover {
+    background: #555;
+}
+
+/* Estilos de resultados */
+.resultados {
+    background: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    max-width: 800px;
+    margin: 20px auto;
+}
+
+.resultados h2 {
+    margin-bottom: 20px;
+}
+
+.resultados table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+}
+
+.resultados table, .resultados th, .resultados td {
+    border: 1px solid #ccc;
+}
+
+.resultados th, .resultados td {
+    padding: 10px;
+    text-align: center;
+}
+
+footer {
+    background: #333;
+    color: #fff;
+    text-align: center;
+    padding: 10px 0;
+    position: fixed; /* Cambiado a fixed para que esté siempre al fondo */
+    bottom: 0;
+    width: 100%;
+    left: 0; /* Asegura que el footer esté alineado al borde izquierdo */
+}
+
+footer ul {
+    list-style: none;
+    padding: 0;
+    margin: 0; /* Asegura que no haya margen adicional */
+}
+
+footer ul li {
+    display: inline;
+    margin: 0 15px;
+}
+
+footer ul li a {
+    color: #fff;
+    text-decoration: none;
+}
+
+footer .redes-sociales a {
+    color: #fff;
+    margin: 0 10px;
+    text-decoration: none;
+}
+
+footer .redes-sociales a:hover {
+    text-decoration: underline;
+}
+.resultados p {
+    font-size: 18px;
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
+#grafica {
+    width: 100%;
+    height: 400px;
+}
+
+.total-pago {
+    background: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    max-width: 800px;
+    margin: 20px auto;
+}
+
+.total-pago h2 {
+    margin-bottom: 15px;
+    font-size: 24px;
+    color: #333;
+}
+
+.total-pago p {
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+.total-pago ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.total-pago ul li {
+    margin-bottom: 8px;
+    font-size: 16px;
+}
+
+.total-pago ul li strong {
+    font-weight: bold;
+}
+
+/* Estilos para los contenedores de tarjetas */
+.product-container {
+    max-width: 1200px;
+    margin: 20px auto;
+    padding: 20px;
+}
+
+.card-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.card-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.card {
+    background: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    overflow: hidden;
+    width: calc(25% - 20px);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.card img {
+    width: 100%;
+    height: auto;
+}
+
+.card-content {
+    padding: 15px;
+}
+
+.card-content h2 {
+    margin: 0;
+    font-size: 1.2em;
+    color: #333;
+}
+
+.card-content p {
+    margin: 5px 0;
+    color: #666;
+}
+
+.card-content button {
+    background: #333;
+    color: #fff;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: background 0.3s;
+}
+
+.card-content button:hover {
+    background: #555;
+}
+
+.card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Estilos para los resultados de simulación */
+.resultado-simulacion, .total-pago {
+    max-width: 1200px;
+    margin: 20px auto;
+    padding: 20px;
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.resultado-simulacion h2, .total-pago h2 {
+    margin-top: 0;
+    color: #333;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+table, th, td {
+    border: 1px solid #ddd;
+}
+
+th, td {
+    padding: 10px;
+    text-align: left;
+}
+
+th {
+    background-color: #f4f4f4;
+}

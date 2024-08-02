@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simulador de Interés Compuesto</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <header>
+        <div class="logo"></div>
+        <span class="logo principal"><a href="index.html"><img src="img/logo StarCar w.png" alt="StarCar Logo" class="logo-image"></a></span>
+        <nav>
+            <ul>
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="productos.html">Productos</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section class="simulador">
+            <h1>Simulador de Interés Compuesto</h1>
+            <form id="simulador-form">
+                <label for="principal">Monto Principal:</label>
+                <input type="number" id="principal" name="principal" min="0" step="0.01" required>
+
+                <label for="interes">Tasa de Interés Anual (%):</label>
+                <input type="number" id="interes" name="interes" min="0" step="0.01" required>
+
+                <label for="capitalizacion">Frecuencia de Capitalización:</label>
+                <select id="capitalizacion" name="capitalizacion" required>
+                    <option value="12">Mensual</option>
+                    <option value="6">Bimestral</option>
+                    <option value="4">Trimestral</option>
+                    <option value="3">Cuatrimestral</option>
+                    <option value="2">Semestral</option>
+                    <option value="1">Anual</option>
+                </select>
+
+                <label for="periodos">Número de Periodos (Meses):</label>
+                <input type="number" id="periodos" name="periodos" min="1" required>
+
+                <label for="enganche">Enganche o Pago Inicial:</label>
+                <input type="number" id="enganche" name="enganche" min="0" step="0.01" required>
+
+                <label for="comision">Comisión por Apertura (%):</label>
+                <input type="number" id="comision" name="comision" min="0" step="0.01" required>
+
+                <label for="iva">IVA al Pago Mensual (%):</label>
+                <input type="number" id="iva" name="iva" min="0" step="0.01" value="8" readonly>
+
+                <button type="submit">Calcular</button>
+            </form>
+        </section>
+        <section class="resultados">
+            <h2>Resultados de la Simulación</h2>
+            <table id="resultados-tabla">
+                <thead>
+                    <tr>
+                        <th>Mes</th>
+                        <th>Principal</th>
+                        <th>Interés</th>
+                        <th>Amortización</th>
+                        <th>Pago Mensual</th>
+                        <th>Balance</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Resultados de la simulación -->
+                </tbody>
+            </table>
+            <div id="resumen">
+                <!-- Resumen de la simulación -->
+            </div>
+            <canvas id="grafica"></canvas>
+        </section>
+        
+    </main>
+    <footer>
+        <p>© 2024 StarCar</p>
+    </footer>
+    
+    <script src="script.js"></script>
+</body>
+</html>
