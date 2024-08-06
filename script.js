@@ -39,9 +39,11 @@ document.addEventListener('DOMContentLoaded', function() {
         const meses = [];
         const balances = [];
         const principales = [];
+        const interesPagos = [];
 
         let principalAmortizadoAcumulado = 0;
         let balance = montoFinanciar;
+        let interesCeroAlcanzado = false;
 
         for (let mes = 1; mes <= periodos; mes++) {
             const interesPeriodoPago = principalActual * (interesAnualDecimal / frecuenciaCapitalizacion);
@@ -64,9 +66,16 @@ document.addEventListener('DOMContentLoaded', function() {
             row.insertCell(4).textContent = pagoMensualConIva.toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
             row.insertCell(5).textContent = balance.toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
 
+            // Marcar la fila cuando el interés llega a cero
+            if (!interesCeroAlcanzado && interesPeriodoPago <= 0) {
+                interesCeroAlcanzado = true;
+                row.style.backgroundColor = 'yellow';
+            }
+
             meses.push(mes);
             balances.push(balance);
             principales.push(principalAmortizadoAcumulado);
+            interesPagos.push(interesPeriodoPago);
         }
 
         document.getElementById('resumen').innerHTML = `
@@ -95,6 +104,17 @@ document.addEventListener('DOMContentLoaded', function() {
                         label: 'Principal Amortizado',
                         data: principales,
                         borderColor: 'rgba(255, 99, 132, 1)',
+                        borderWidth: 1,
+                        fill: false
+                    },
+                    {
+                        label: 'Intereses Pagados',
+                        data: interesPagos,
+                        borderColor: function(context) {
+                            const index = context.dataIndex;
+                            const value = context.dataset.data[index];
+                            return value <= 0 ? 'yellow' : 'rgba(153, 102, 255, 1)';
+                        },
                         borderWidth: 1,
                         fill: false
                     }
